@@ -2544,7 +2544,9 @@
     "motorsEnableControl": {
         "message": "<strong>I understand the risks</strong>, the propellers are removed - enable motor control and arming, and disable Runaway Takeoff Prevention."
     },
-
+    "motorsEnableFeatherMode": {
+        "message": "Enable <strong>Feather mode</strong>. Use this mode to figure out motor direction."
+    },
     "motorOutputReorderDialogClose": {
         "message": "Cancel"
     },

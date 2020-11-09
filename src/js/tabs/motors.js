@@ -538,6 +538,19 @@ TABS.motors.initialize = function (callback) {
             $('div.sliders input').trigger('input');
         }
 
+        function setFeatherMode(isEnabled) {
+            const sliders = $('div.sliders input');
+            let max = rangeMax;
+
+            if (isEnabled) {
+                max = rangeMin + 50;
+            }
+
+            // Force value to min to avoid going full rpm accidentally when coming out of feather mode.
+            sliders.prop('max', max).val(rangeMin);
+            sliders.trigger('input');
+        }
+
         setSlidersDefault();
 
         $('#motorsEnableTestMode').change(function () {
@@ -549,6 +562,12 @@ TABS.motors.initialize = function (callback) {
 
             mspHelper.setArmingEnabled(enabled, enabled);
         }).change();
+
+        $('#motorsFeatherMode').change(function () {
+            var enabled = $(this).is(':checked');
+
+            setFeatherMode(enabled);
+        });
 
         var buffering_set_motor = [],
         buffer_delay = false;

@@ -361,7 +361,8 @@
     margin-bottom: 10px;
 }
 
-.tab-motors .motor_testing .notice .motorsEnableTestMode {
+.tab-motors .motor_testing .notice .motorsEnableTestMode,
+.tab-motors .motor_testing .notice .motorsFeatherMode {
     margin-left: 10px;
 }
 
